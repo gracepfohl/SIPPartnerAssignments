@@ -1,5 +1,5 @@
 start = '''
-You wake up on a Monday and realize you have have to go through a series of steps in order to make it to school. Make these choices and see where your day takes you!
+ wake up on a Monday and realize you have have to go through a series of steps in order to make it to school. Make these choices and see where your day takes you!
 '''
 
 
