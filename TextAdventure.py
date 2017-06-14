@@ -20,6 +20,8 @@ if user_input == "yes":
             print ("You are late to school. Since it is your third offense this year, you get a suspension and you can not return to school until next Monday. Adventure over")
         elif user_input == "no":
             print ("You have arrived to school on time! Congratulations!")
+        else :
+            print ("This is not a valid answer. You must begin the game again.")
     elif user_input == "C":
         print ("Do you want to stop and get coffee on the way? (yes or no)")
         user_input = input()
@@ -27,5 +29,12 @@ if user_input == "yes":
             print ("You are late to school. Since it is your third offense this year, you get a suspension and you can not return to school until next Monday. Adventure over.")
         elif user_input == "no":
             print ("You have arrived to school on time! Congratulations!")
+        else :
+            print ("This is not a valid answer. You must begin the game again.")
+    else :
+        print ("This is not a valid answer. You must begin the game again.")
+
 elif user_input == "no":
     print("You have not eaten breakfast. You are too tired to go to school and fall asleep in your bed. You never make it to school.")
+else:
+    print ("This is not a valid answer. You must begin the game again.")
