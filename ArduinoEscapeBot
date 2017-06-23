@@ -1,0 +1,77 @@
+//6.23.2017 Chrisitine, Chiara, Grace, Aliya, Camryn
+ /* Robotics with the BOE Shield - DisplayWhiskerStates
+ * Display left and right whisker states in Serial Monitor.
+ * 1 indicates no contact; 0 indicates contact.
+ */
+
+#include <Servo.h>  
+
+Servo servoLeft;   
+Servo servoRight; 
+
+void moveForward(){
+  servoLeft.writeMicroseconds(1700);         
+  servoRight.writeMicroseconds(1300);        
+} 
+void moveBackward(int x){
+  servoLeft.writeMicroseconds(1300);         
+  servoRight.writeMicroseconds(1700);
+    delay(x);        
+} 
+void turnRight(int z){
+  servoLeft.writeMicroseconds(1700);        
+  servoRight.writeMicroseconds(1700);        //544 (90), 180 (30)
+    delay(z);
+}
+void turnLeft(){
+  servoLeft.writeMicroseconds(1300);         // Turns left
+  servoRight.writeMicroseconds(1300);        //544 (90), 180 (30)
+    delay(250);
+}
+void stayStill(int y){
+  servoLeft.writeMicroseconds(1500);         
+  servoRight.writeMicroseconds(1500);       
+    delay(y);
+}
+
+ 
+void setup()                                 // Built-in initialization block
+{                               
+  pinMode(5, INPUT);                         // Set LEFT whisker pin to input
+  pinMode(7, INPUT);                         // Set RIGHT whisker pin to input
+
+  servoLeft.attach(13);                
+  servoRight.attach(12);    
+  Serial.begin(9600);                        // Set data rate to 9600 bps
+}  
+
+
+void loop()                                  // Main loop auto-repeats
+{    
+   
+  byte wLeft = digitalRead(5);               // Copy left result to wLeft  
+  byte wRight = digitalRead(7);              // Copy right result to wRight
+  
+  Serial.print(wLeft);                       // Display left whisker state
+  Serial.println(wRight);                    // Display right whisker state
+
+  delay(50);                                 // Pause for 50 ms
+
+   
+    
+  moveForward();
+  
+  if (wLeft==0 and wRight==0){
+    moveBackward(500); 
+    turnRight(50);      
+    }
+  else if (wLeft==0){
+    moveBackward(500); 
+    turnRight(250);  
+  }
+  else if (wRight==0){
+    moveBackward(500);  
+    turnLeft();  
+  }
+}   
+  
