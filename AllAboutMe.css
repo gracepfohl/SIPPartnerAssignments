@@ -1,0 +1,19 @@
+#ProfileImage {
+  border-radius: 75%;
+  position: absolute;
+  right: 20px;
+  width: 300px;
+}
+
+h1 {
+  font-size: 70px;
+}
+#Biography {
+  position: absolute;
+  left: 10px;
+  width:1000px;
+}
+body {
+  background-image:url(http://2.bp.blogspot.com/-qF7X0he3Yto/T-BYOBryG8I/AAAAAAAAB_o/nDtgPjSju-8/s1600/light_background_with_colorful_spots.jpg);
+  font-family:sans-serif;
+}
